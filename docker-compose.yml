@@ -6,6 +6,7 @@ services:
     build: ./cups
     ports:
       - "80"
+      - "41951"
     privileged: true
     restart: always
     network_mode: host

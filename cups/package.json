@@ -1,0 +1,24 @@
+{
+  "name": "trickle-print",
+  "version": "0.9.9",
+  "description": "Trickle Label Printer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thisistrickle/trickle-print.git"
+  },
+  "author": "Adrian Wills @ Trickle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thisistrickle/trickle-print/issues"
+  },
+  "homepage": "https://github.com/thisistrickle/trickle-print#readme",
+  "dependencies": {
+    "https": "^1.0.0",
+    "ipp": "^2.0.1",
+    "pdfkit": "^0.11.0"
+  }
+}

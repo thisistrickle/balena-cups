@@ -1,16 +1,23 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%:build
+FROM balenalib/%%BALENA_MACHINE_NAME%%-node:build
 
 # Install the packages we need. Avahi will be included
 RUN install_packages \
+    build-essential \
     cups \
+    cups-client \
     iptables \
     avahi-daemon \
     dbus \
     libnss-mdns \
-    foomatic-db-compressed-ppds 
+    foomatic-db-compressed-ppds
 
-# Add script
-COPY run.sh /
+WORKDIR /usr/src/app
+
+COPY package.json package.json
+
+RUN JOBS=MAX npm install --production --unsafe-perm && npm cache verify && rm -rf /tmp/*
+
+COPY . ./
 
 # Enable USB devices
 ENV UDEV 1
